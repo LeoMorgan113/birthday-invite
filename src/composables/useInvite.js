@@ -1,5 +1,6 @@
 import { ref } from 'vue'
 
+
 export function useInvite() {
     const GUEST_LIST = {
         'VLAD25':  { name: 'Влад',  emoji: '🦄', color: '#fed7aa' },

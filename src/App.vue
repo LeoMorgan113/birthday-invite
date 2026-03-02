@@ -1,8 +1,17 @@
 <script setup lang="ts">
-import { useInvite } from './composables/useInvite.js'
+import { useInvite } from './composables/useInvite.js';
 
-
-const { screen, codeInput, errorMsg, checkCode, ransomWords, walkers, confetti, activeDots, inputShaking } = useInvite()
+const {
+  screen,
+  codeInput,
+  errorMsg,
+  checkCode,
+  ransomWords,
+  walkers,
+  confetti,
+  activeDots,
+  inputShaking
+} = useInvite();
 </script>
 
 <template>
