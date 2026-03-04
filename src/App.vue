@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useInvite } from './composables/useInvite.ts';
+import { useInvite } from './composables/useInvite';
 
 const {
   screen,
