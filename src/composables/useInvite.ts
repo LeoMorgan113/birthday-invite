@@ -13,7 +13,7 @@ export function useInvite() {
 
     const WALKERS = Object.values(GUEST_LIST)
 
-    const screen      = ref('invite')
+    const screen      = ref('code')
     const codeInput   = ref('')
     const errorMsg    = ref('')
     const activeDots  = ref(0)
@@ -59,16 +59,15 @@ export function useInvite() {
             delay:    i * stagger,
             yOffset:  Math.floor(Math.random() * 20) - 10,
         }));
+        startConfetti();
 
         [0,1,2,3].forEach(i => {
             setTimeout(() => { activeDots.value = i + 1 }, i * 900 + 400)
         })
 
-        startConfetti();
-
         setTimeout(() => {
             screen.value = 'invite';
-            startConfetti()
+            startConfetti();
         }, 4200)
     }
     startConfetti();
