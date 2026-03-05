@@ -158,6 +158,13 @@
     letter-spacing: 1px; min-height: 18px;
 }
 
+.footer {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
 /* ===== WALK SCREEN ===== */
 .walk-title {
     font-family: 'Pacifico', cursive;
@@ -201,7 +208,8 @@
 }
 .leg {
     width: 8px; height: 24px;
-    background: #f472b6; border-radius: 4px;
+    background: #f472b6;
+    border-radius: 4px;
     transform-origin: top center;
 }
 .leg:first-child { animation: legL .4s linear infinite; }
@@ -254,13 +262,28 @@
 .invite-card {
     background: #f5ece2;
     border-radius: 4px;
-    padding: 32px 28px 40px;
+    padding: 5px;
     position: relative;
     box-shadow: 12px 12px 0 #f9a8d4, 24px 24px 0 #fce7f3;
     border: 2px solid rgba(0,0,0,.06);
-    max-width: 440px; width: 100%;
+    max-width: 465px;
+    min-width: 352px;
+    width: 100%;
     overflow: visible;
     animation: pop .7s cubic-bezier(.34,1.56,.64,1);
+}
+
+.invite-image {
+    height: 800px;
+}
+
+@media screen and (max-width: 1000px) {
+    .invite-card {
+        max-width: 352px;
+    }
+    .invite-image {
+        height: 600px;
+    }
 }
 
 .tape {
