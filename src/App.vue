@@ -6,29 +6,29 @@ const {
   codeInput,
   errorMsg,
   checkCode,
-  ransomWords,
   walkers,
   confetti,
   activeDots,
-  inputShaking
+  inputShaking,
+  modalOpen,
+  openModal,
+  closeModal
 } = useInvite();
 </script>
 
 <template>
-
   <Transition name="fade">
     <div v-if="screen === 'code'" class="screen">
-
       <div class="deco" style="top:5%;left:3%;font-size:50px;animation:wiggle 3s ease-in-out infinite">
         <img style="height: 80px;" src="./assets/items/heart.png" alt="Heart">
       </div>
       <div class="deco" style="top:5%;right:5%;font-size:50px;animation:float 3s ease-in-out infinite">
         <img style="height: 250px;" src="./assets/items/balloons.png" alt="Balloons">
       </div>
-      <div class="deco" style="bottom:3%;left:4%;font-size:80px;animation:float 4s ease-in-out infinite">
+      <div class="deco" style="bottom:10%;left:4%;font-size:80px;animation:float 4s ease-in-out infinite">
         <img style="height: 150px;" src="./assets/items/disco.png" alt="Disco">
       </div>
-      <div class="deco" style="bottom:5%;right:3%;font-size:70px;animation:float 5s ease-in-out infinite">
+      <div class="deco" style="bottom:11%;right:3%;font-size:70px;animation:float 5s ease-in-out infinite">
         <img style="height: 150px;" src="./assets/items/disco.png" alt="Disco">
       </div>
       <div class="deco" style="top:18%;left:3%;font-size:28px;animation:float 4s ease-in-out infinite">
@@ -57,7 +57,8 @@ const {
         <a class="code-title" href="https://rewish.io/JaEAAA/wishes?access_code=8b7v95VD9izCoL">
           Wishlist by LeoMorgan
         </a>
-        <span>or anything You wish or prepare</span>
+        <span>or anything else you decide.</span>
+        <span>It's not required, it's recommendations.</span>
       </div>
     </div>
   </Transition>
@@ -65,15 +66,16 @@ const {
   <!-- ===== АНІМАЦІЯ ХОДИ ===== -->
   <Transition name="fade">
     <div v-if="screen === 'walk'" class="screen">
-      <p class="walk-title">Запрошую тебе! 🎉</p>
-      <div class="walk-stage">
-        <div v-for="c in confetti" :key="'c'+c.id"
-             class="confetti-piece"
-             :style="{ left: c.left + '%',
+      <div v-for="c in confetti" :key="'c'+c.id"
+           class="confetti-piece"
+           :style="{ left: c.left + '%',
+             top: '-5%',
             background: c.color,
             animationDuration: c.duration + 's',
             animationDelay: c.delay + 's',
             transform: `rotate(${c.rotation}deg)`,}"/>
+      <p class="walk-title">Запрошую тебе! 🎉</p>
+      <div class="walk-stage">
 
         <div v-for="w in walkers" :key="w.id"
              class="walker"
@@ -90,40 +92,49 @@ const {
           </div>
           <div class="walker-name">{{ w.name }}</div>
         </div>
-
       </div>
 
       <div class="progress-dots">
         <div v-for="i in 4" :key="i"
              :class="['prog-dot', { active: activeDots >= i }]"/>
       </div>
-      <p class="walk-hint">всі йдуть на вечірку...</p>
+      <p class="walk-hint">Всі йдуть на вечірку...</p>
     </div>
   </Transition>
 
   <!-- ===== ЗАПРОШЕННЯ ===== -->
   <Transition name="pop">
     <div v-if="screen === 'invite'" class="screen invite-screen">
-      <div v-for="c in confetti" :key="'c'+c.id"
-           class="confetti-piece"
-           :style="{ left: c.left + '%',
+      <div>
+        <div v-for="c in confetti" :key="'c'+c.id"
+             class="confetti-piece"
+             :style="{ left: c.left + '%',
+            top: '-5%',
             background: c.color,
             animationDuration: c.duration+ 's',
             animationDelay: c.delay + 's',
             transform: `rotate(${c.rotation}deg)`,}"/>
-      <div class="">
+      </div>
 
-        <div class="invite-card">
-          <div class="tape" style="top:-8px;left:20px;transform:rotate(-8deg)"></div>
-          <div class="tape" style="top:-8px;right:20px;transform:rotate(6deg)"></div>
-          <a href="https://maps.app.goo.gl/yEMkRFGqPKQxLgNm7">
-            <img src="/invitation.png" alt="Invite" class="invite-image">
-          </a>
-        </div>
+      <div class="invite-card">
+        <div class="tape" style="top:-8px;left:20px;transform:rotate(-8deg)"></div>
+        <div class="tape" style="top:-8px;right:20px;transform:rotate(6deg)"></div>
+        <a href="https://maps.app.goo.gl/yEMkRFGqPKQxLgNm7">
+          <img src="/invitation.png" alt="Invite" class="invite-image">
+        </a>
+      </div>
+
+      <div style="position: absolute; bottom: 3%;">
+        <span class="code-title">↑ Click to find party location ↑</span>
+        <span @click="openModal()" class="code-title" style="font-size: 12px;">Prikol here</span>
       </div>
     </div>
   </Transition>
 
+  <Teleport to="body">
+    <div v-if="modalOpen" class="modal-overlay" @click="closeModal">
+      <img src="/cat.jpg" class="modal-img" @click.stop />
+    </div>
+  </Teleport>
 </template>
 
-<!--<style scoped ></style>-->
