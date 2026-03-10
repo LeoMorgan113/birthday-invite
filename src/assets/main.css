@@ -274,16 +274,7 @@
 }
 
 .invite-image {
-    height: 800px;
-}
-
-@media screen and (max-width: 1000px) {
-    .invite-card {
-        max-width: 330px;
-    }
-    .invite-image {
-        height: 555px;
-    }
+    max-width: 465px;
 }
 
 .tape {

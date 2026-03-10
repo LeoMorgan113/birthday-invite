@@ -116,17 +116,19 @@ const {
             transform: `rotate(${c.rotation}deg)`,}"/>
       </div>
 
-      <div class="invite-card">
-        <div class="tape" style="top:-8px;left:20px;transform:rotate(-8deg)"></div>
-        <div class="tape" style="top:-8px;right:20px;transform:rotate(6deg)"></div>
-        <a href="https://maps.app.goo.gl/yEMkRFGqPKQxLgNm7">
-          <img src="/invitation.png" alt="Invite" class="invite-image">
-        </a>
-      </div>
+      <div style="display: flex; flex-direction: column; justify-content: space-around; gap:40px;">
+        <div class="invite-card">
+          <div class="tape" style="top:-8px;left:20px;transform:rotate(-8deg)"></div>
+          <div class="tape" style="top:-8px;right:20px;transform:rotate(6deg)"></div>
+          <a href="https://maps.app.goo.gl/yEMkRFGqPKQxLgNm7">
+            <img src="/invitation.png" alt="Invite" class="invite-image">
+          </a>
+        </div>
 
-      <div style="position: absolute; bottom: 3%;">
-        <span class="code-title">↑ Click to find party location ↑</span>
-        <span @click="openModal()" class="code-title" style="font-size: 12px;">Prikol here</span>
+        <div>
+          <span class="code-title">↑ Click to find party location ↑</span>
+          <span @click="openModal()" class="code-title" style="font-size: 12px;">Prikol here</span>
+        </div>
       </div>
     </div>
   </Transition>
