@@ -13,6 +13,8 @@ Guests are prompted to enter a secret code before seeing the invitation.
 
 > **Entrance code: `MASH25`**
 
+> Add a birthday wishlist link for your friends.
+
 ---
 
 ### 🚶 Guest Walkers
