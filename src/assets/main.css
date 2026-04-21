@@ -255,8 +255,7 @@
 .invite-screen {
     overflow-y: auto;
     align-items: center;
-    justify-content: flex-start;
-    padding: 40px 10px;
+    justify-content: center;
 }
 
 .invite-card {
@@ -274,7 +273,7 @@
 }
 
 .invite-image {
-    max-width: 465px;
+    max-width: 450px;
 }
 
 .tape {

@@ -2,12 +2,12 @@ import { ref } from 'vue';
 
 export function useInvite() {
     const GUEST_LIST = {
-        'VLAD25': {name: 'Влад', photo: './people/vlad.png', emoji: '🦄', color: '#0079bd', sex: 'male'},
-        'MISH25': {name: 'Міш', photo: './people/mish.png', emoji: '🌸', color: '#a5f3fc', sex: 'male'},
-        'MASH25': {name: 'Маш', photo: './people/mash.png', emoji: '🌸', color: '#cb0b78', sex: 'female'},
-        'DANYA25': {name: 'Даня', photo: './people/danya.png', emoji: '🌺', color: '#bbe5f7', sex: 'male'},
-        'MASHAP25': {name: 'Марія', photo: './people/maria.png', emoji: '⭐', color: '#fd8ae6', sex: 'female'},
-        'DASHA25': {name: 'Даша', photo: './people/dasha.png', emoji: '🎸', color: '#8c7bff', sex: 'female'}
+        'VLAD25': {name: 'Влад', emoji: '🦄', color: '#0079bd', sex: 'male'},
+        'MISH25': {name: 'Міш', emoji: '🌸', color: '#a5f3fc', sex: 'male'},
+        'MASH25': {name: 'Маш', emoji: '🌸', color: '#cb0b78', sex: 'female'},
+        'DANYA25': {name: 'Даня', emoji: '🌺', color: '#bbe5f7', sex: 'male'},
+        'MASHAP25': {name: 'Марія', emoji: '⭐', color: '#fd8ae6', sex: 'female'},
+        'DASHA25': {name: 'Даша', emoji: '🎸', color: '#8c7bff', sex: 'female'}
     }
 
     const WALKERS = Object.values(GUEST_LIST);

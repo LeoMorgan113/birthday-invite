@@ -54,7 +54,7 @@ const {
       </div>
 
       <div class="footer code-title">
-        <a class="code-title" href="https://rewish.io/JaEAAA/wishes?access_code=8b7v95VD9izCoL">
+        <a class="code-title" href="https://rewish.io">
           Wishlist by LeoMorgan
         </a>
         <span>or anything else you decide.</span>
@@ -84,7 +84,10 @@ const {
               bottom: (43 + w.yOffset) + 'px', }">
           <div class="walker-avatar"
                :style="{ borderColor: w.color, boxShadow: `3px 3px 0 ${w.color}` }">
-            <img style="height: 60px" :src="w.photo" :alt="w.name">
+            <div
+                class="walker-avatar"
+                :style="{ borderColor: w.color, boxShadow: `3px 3px 0 ${w.color}` }"
+            >{{ w.emoji }}</div>
           </div>
           <div class="walker-legs">
             <div class="leg" :style="{ background: w.color }"/>
@@ -120,7 +123,7 @@ const {
         <div class="invite-card">
           <div class="tape" style="top:-8px;left:20px;transform:rotate(-8deg)"></div>
           <div class="tape" style="top:-8px;right:20px;transform:rotate(6deg)"></div>
-          <a href="https://maps.app.goo.gl/yEMkRFGqPKQxLgNm7">
+          <a href="https://maps.app.goo.gl/SuFt1BsaXVuA2iYe7">
             <img src="/invitation.png" alt="Invite" class="invite-image">
           </a>
         </div>
